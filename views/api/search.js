@@ -13,8 +13,8 @@ module.exports = {
 };
 
 function toSearchResult(place) {
-  var result = ObjectUtils.cloneOnlyWith(place, ["type", "facts", "photos"])
-  result.name = place.names[0];
+  var result = ObjectUtils.cloneOnlyWith(place, ["facts", "photos"])
+  result.name = {portuguese: place.names[0], english: place.names[1]};
   result.stealingOcurrences = toStealingOcurrencesJSON(place.stealingOcurrences, place.stealingOcurrencesTerm)
   return result;
 }
@@ -25,10 +25,12 @@ function toStealingOcurrencesJSON(ocurrencesData, term) {
     regionName: term,
     total: ocurrencesData.total,
     dangerHours: ocurrencesData.dangerHours.map(function(dangerHour) {
-      var dangerHourJSON = ObjectUtils.cloneOnlyWith(dangerHour, ["hourRange", "ocurrences", "percent"]);
+      var dangerHourJSON = ObjectUtils.cloneOnlyWith(dangerHour, ["ocurrences"]);
       var start = dangerHour.hourRange.start;
       var end = dangerHour.hourRange.end;
+      dangerHourJSON.prettyRange = util.format("%sh to %sh", start, end);
       dangerHourJSON.prettyName = PRETTY_NAMES[start];
+      dangerHourJSON.percent = Math.round(dangerHour.percent * 10) / 10;
       return dangerHourJSON;
     })
   };
