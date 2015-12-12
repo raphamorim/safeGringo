@@ -28,7 +28,8 @@
     "multer": "^1.1.0"
   },
   "devDependencies": {
+    "jake": "latest",
     "nodemon": "^1.8.1",
-    "jake": "latest"
+    "typeahead.js": "^0.11.1"
   }
 }
