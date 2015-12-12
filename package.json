@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon app.js --ignore 'public/**/*'",
-    "seed": "jake -f tasks/seed.js",
+    "seed": "node scripts/start_db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,7 +28,6 @@
     "multer": "^1.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.8.1",
-    "jake": "latest"
+    "nodemon": "^1.8.1"
   }
 }
