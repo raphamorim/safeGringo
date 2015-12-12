@@ -19,3 +19,9 @@ npm install
 ```shell
 npm start
 ```
+
+## Seed for MongoDB
+
+```shell
+npm run seed
+```
