@@ -20,6 +20,7 @@ function toSearchResult(place) {
 }
 
 function toStealingOcurrencesJSON(ocurrencesData, term) {
+  var PRETTY_NAMES = {'0': "Dawn", '6': "Morning", '12': "Afternoon", '18': "Night"};
   return {
     regionName: term,
     total: ocurrencesData.total,
@@ -27,7 +28,7 @@ function toStealingOcurrencesJSON(ocurrencesData, term) {
       var dangerHourJSON = ObjectUtils.cloneOnlyWith(dangerHour, ["hourRange", "ocurrences", "percent"]);
       var start = dangerHour.hourRange.start;
       var end = dangerHour.hourRange.end;
-      dangerHourJSON.prettyRange = util.format("%sh to %sh", start, end);
+      dangerHourJSON.prettyName = PRETTY_NAMES[start];
       return dangerHourJSON;
     })
   };

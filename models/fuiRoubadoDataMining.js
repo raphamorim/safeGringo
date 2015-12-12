@@ -1,5 +1,7 @@
 var allOcurrences = require('../data/ondefuiroubado.json');
 
+var RANGE_INTERVAL = 6;
+
 module.exports = {
   extractData: function(term) {
     var ocurrences = allOcurrences.filter(function(ocurrence) {
@@ -11,23 +13,21 @@ module.exports = {
     });
 
     var ocurrencesByHour = {
-      0 : 0, // 00h ~ 03h
-      3 : 0, // 03h ~ 06h
-      6 : 0, // ...
-      9 : 0,
-      12 : 0,
-      15 : 0,
-      18 : 0,
-      21 : 0
+      '0' : 0, // 00h ~ 06h
+      '6' : 0, // ...
+      '12' : 0,
+      '18' : 0
     };
     ocurrences.forEach(function(ocurrence) {
       if(ocurrence.hora) {
         var hour = new Date(ocurrence.hora).getUTCHours();
-        ocurrencesByHour[Math.floor(hour/3)*3]++;
+        var interval = Math.floor(hour/RANGE_INTERVAL)*RANGE_INTERVAL;
+        ocurrencesByHour[interval]++;
       }
     });
-    var total = Object.keys(ocurrencesByHour).reduce(function(total, hour){
-      return parseInt(total, 10) + parseInt(ocurrencesByHour[hour], 10);
+    var total = 0;
+    Object.keys(ocurrencesByHour).forEach(function(hour){
+      total += ocurrencesByHour[hour];
     });
 
     var percents = hourRangesBiggerPercents(total, ocurrencesByHour);
@@ -38,10 +38,7 @@ module.exports = {
 function hourRangesBiggerPercents(total, hours) {
   var percents = {};
   Object.keys(hours).forEach(function(hour){
-    var percent = Math.round((hours[hour] / total)*10000)/100;
-    if(percent >= 15) {
-      percents[hour] = percent;
-    }
+    percents[hour] = Math.round((hours[hour] / total)*10000)/100;
   });
   return percents;
 }
@@ -51,7 +48,7 @@ function makeDataResume(ocurrences, percents, total) {
     total: total,
     dangerHours: Object.keys(percents).map(function(hour) {
       return {
-        hourRange: {start: parseInt(hour, 10), end: (parseInt(hour,10)+3)%24},
+        hourRange: {start: parseInt(hour, 10), end: (parseInt(hour,10)+RANGE_INTERVAL)%24},
         ocurrences: ocurrences[hour],
         percent: percents[hour]
       };
