@@ -28,6 +28,8 @@ app.use(express.static('./public'));
 // ROUTES
 // ==============================================
 
+app.use('/api/search', routes.api.search);
+
 app.use('/', routes.index);
 
 // ==============================================
