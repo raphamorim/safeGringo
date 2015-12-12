@@ -7,7 +7,7 @@ module.exports = {
       var place = places[i];
       results.push(toSearchResult(place));
     }
-    return {results: results};
+    return {suggestions: results};
   }
 };
 
