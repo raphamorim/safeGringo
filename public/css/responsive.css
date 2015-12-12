@@ -1,0 +1,55 @@
+@media screen and (max-width: 800px) {
+/* -- Header -- */
+
+#logo {
+  padding: 25px;
+  padding-right: 10px;
+  margin-left: 10px;
+}
+
+header {
+  position: absolute;
+  top: 0px;
+  display: inline;
+}
+
+@media screen and (max-width: 550px) {
+/* -- Header -- */
+
+#logo {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  margin-left: 20px;
+}
+
+#slogan {                             
+  display: block;
+  line-height: 18px;
+  margin-left: 20px;
+}
+
+}
+
+@media screen and (max-width: 360px) {
+
+#slogan {                             
+  display: block;
+  width: 200px;
+  line-height: 16px;
+  font-size: 14px;
+}
+
+#search {
+  width: 85%;
+}
+
+#search button {
+  padding: 15px 5px 12px 5px;
+  font-size: 12px;
+  font-family: "ProximaNova-Reg";
+}
+
+#search input {
+  padding: 11px;
+}
