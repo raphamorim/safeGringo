@@ -1,6 +1,7 @@
-var Place = require('./place');
+var Place = require('../models/place'),
+    env   = require('../config/environment');
 
-require('mongoose').connect('mongodb://localhost/test');
+require('mongoose').connect(env.config.mongo);
 Place.find({}).remove().exec();
 
 var places = [

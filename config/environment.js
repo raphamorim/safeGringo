@@ -13,7 +13,7 @@ Config.env = process.env["NODE_ENV"] || "development";
  */
 Config.development = {
   name: "development",
-  mongo: "mongodb://127.0.0.1:27017/3days",
+  mongo: "mongodb://127.0.0.1:27017/safeGringoDevelopment",
   defaultUrl: "http://localhost",
   serverPort: 3000,
   logNamespace: "development",
