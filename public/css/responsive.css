@@ -1,104 +1,64 @@
 @media screen and (max-width: 800px) {
-/* -- Header -- */
-
-.card-list {
-  width: 600px;
+  .card-list {
+    width: 600px;
+  }
 }
-
-/*#logo {
-  padding: 25px;
-  padding-right: 10px;
-  margin-left: 10px;
-}
-
-header {
-  position: absolute;
-  top: 0px;
-  display: inline;
-}*/
 
 @media screen and (max-width: 640px) {
-/* -- Header -- */
+  #search h1 {
+    font-size: 20px;
+  }
 
-#search h1 {
-  font-size: 20px;
-}
+  form {
+    text-align: center;
+  }
 
-form {
-  text-align: center;
-}
+  #search {
+    margin-top: 70px;
+    width: 100%;
+  }
 
-#search {
-  margin-top: 70px;
-  width: 100%;
-}
+  #search input {
+    height: 10px;
+    width: 70%;
+    margin-bottom: 10px;
+  }
 
-#search input {
-  height: 10px;
-  width: 70%;
-  margin-bottom: 10px;
-}
+  #logo { 
+    text-align: center;
+  }
 
-#logo { 
-  text-align: center;
-}
+  #slogan {
+    display: none;
+  }
 
-#slogan {
-  display: none;
-}
-
-.card-list {
-  width: 300px;
-}
-
-/*#logo {
-  padding-top: 20px;
-  padding-bottom: 10px;
-  padding-left: 0px;
-  margin-left: 20px;
-}
-
-#slogan {                             
-  display: block;
-  line-height: 18px;
-  margin-left: 20px;
-}*/
-
+  .card-list {
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 360px) {
-/*
-#slogan {                             
-  display: block;
-  width: 200px;
-  line-height: 16px;
-  font-size: 14px;
-}
+  #search h1 {
+    font-size: 15px;
+  }
 
-#search {
-  width: 85%;
-}*/
+  #search input {
+    height: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+  }
 
-#search h1 {
-  font-size: 15px;
-}
+  .card-list {
+    width: 240px;
+  }
 
-#search input {
-  height: 10px;
-  width: 80%;
-  margin-bottom: 10px;
-}
+  #search button {
+    padding: 15px 5px 12px 5px;
+    font-size: 12px;
+    font-family: "ProximaNova-Reg";
+  }
 
-.card-list {
-  width: 240px;
-}
-
-#search button {
-  padding: 15px 5px 12px 5px;
-  font-size: 12px;
-  font-family: "ProximaNova-Reg";
-}
-
-#search input {
-  padding: 11px;
+  #search input {
+    padding: 11px;
+  }
 }
