@@ -2,30 +2,21 @@
 <% include partials/header %>
 
 <header>
-    <div id="cover">
-      <div id="layer-protection">
-        <img id="logo" src="images/logo.svg"/>
-        <p id="slogan">Be confident to explore this amazing city</p>
-        <div id="search">
-          <h1 id="title">Where would you like to go in Rio?</h1>
-         <form>
-            <input class="text-field" name="q" placeholder="Start typing the country name" type="text" autocomplete="off" required></input>
-            <button id="explore_btn">Explore</button>
-          </form>
-        </div>
+  <div id="cover">
+    <div id="layer-protection">
+      <img id="logo" src="images/logo.svg"/>
+      <p id="slogan">Be confident to explore this amazing city</p>
+      <div id="search">
+        <h1 id="title">Where would you like to go in Rio?</h1>
+        <form>
+          <input class="text-field" name="q" placeholder="Start typing the country name" type="text" autocomplete="off" required></input>
+          <button id="explore_btn">Explore</button>
+        </form>
       </div>
     </div>
+  </div>
 </header>
-<section class="card-list">
-   <div class="card">
-        <div class="card-category">
-            <span>Tourist Point</span>
-            <h2>Copacana Beach</h2>
-        </div>
-        <div class="card-image">
-            <img src="images/copacabana.jpg" alt="Copacabana">
-        </div>
-   </div>
-</section>
+
+<section class="card-list"></section>
 
 <% include partials/footer %>
