@@ -54,7 +54,7 @@ li {
   vertical-align: middle;
 }
 
-#slogan {                             
+#slogan {
   display: inline;
   color: white;
   font-family: "ProximaNova-Light";
@@ -63,7 +63,7 @@ li {
 }
 
 header {
-  position: absolute;
+  position: relative;
   top: 0px;
   width: 100%;
   display: inline;
@@ -73,19 +73,16 @@ header {
 
 #cover {
   height: 70vh;
-  background: url(../images/cover.jpg) no-repeat center center fixed ; 
+  background: url(../images/cover.jpg) no-repeat center center fixed ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
 }
 
 #layer-protection {
   height: 70vh;
   background-color: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
 }
 
 /* -- Search -- */
@@ -94,6 +91,7 @@ header {
   width: 600px;
   margin: 0 auto;
   text-align: center;
+  margin-top: 120px;
 }
 
 #search h1 {
@@ -104,7 +102,7 @@ header {
 }
 
 #search input {
-  border: 2px solid #959595; 
+  border: 2px solid #959595;
   background: rgba(255,255,255, 0);
   padding: 15px;
   margin-right: 10px;
@@ -125,7 +123,7 @@ header {
 }
 
 #search button {
-  border: 2px solid #ffd400; 
+  border: 2px solid #ffd400;
   padding: 18px 16px 15px 16px;
   background: rgba(255,255,255, 0);
   font-family: "ProximaNova-Bold";
@@ -143,3 +141,17 @@ header {
     background: #ffd400;
     color: #FFF;
 }
+
+.card-list {
+    position: relative;
+    margin: 0px auto;
+    width: 820px;
+    padding: 10px;
+}
+
+.card {
+    height: 240px;
+    background: #000;
+    width: 100%;
+}
+

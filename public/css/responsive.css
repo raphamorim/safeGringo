@@ -1,7 +1,11 @@
 @media screen and (max-width: 800px) {
 /* -- Header -- */
 
-#logo {
+.card-list {
+  width: 600px;
+}
+
+/*#logo {
   padding: 25px;
   padding-right: 10px;
   margin-left: 10px;
@@ -11,12 +15,43 @@ header {
   position: absolute;
   top: 0px;
   display: inline;
-}
+}*/
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 640px) {
 /* -- Header -- */
 
-#logo {
+#search h1 {
+  font-size: 20px;
+}
+
+form {
+  text-align: center;
+}
+
+#search {
+  margin-top: 70px;
+  width: 100%;
+}
+
+#search input {
+  height: 10px;
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+#logo { 
+  text-align: center;
+}
+
+#slogan {
+  display: none;
+}
+
+.card-list {
+  width: 300px;
+}
+
+/*#logo {
   padding-top: 20px;
   padding-bottom: 10px;
   padding-left: 0px;
@@ -27,12 +62,12 @@ header {
   display: block;
   line-height: 18px;
   margin-left: 20px;
-}
+}*/
 
 }
 
 @media screen and (max-width: 360px) {
-
+/*
 #slogan {                             
   display: block;
   width: 200px;
@@ -42,6 +77,20 @@ header {
 
 #search {
   width: 85%;
+}*/
+
+#search h1 {
+  font-size: 15px;
+}
+
+#search input {
+  height: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.card-list {
+  width: 240px;
 }
 
 #search button {
