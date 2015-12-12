@@ -6,11 +6,7 @@
 
 @media screen and (max-width: 640px) {
   #search h1 {
-    font-size: 20px;
-  }
-
-  form {
-    text-align: center;
+    font-size: 30px;
   }
 
   #search {
@@ -20,11 +16,11 @@
 
   #search input {
     height: 10px;
-    width: 70%;
     margin-bottom: 10px;
   }
 
   #logo { 
+    margin-left: 0px;
     text-align: center;
   }
 
@@ -35,16 +31,19 @@
   .card-list {
     width: 300px;
   }
+
+  #search button {
+    padding: 13px 16px 11px 16px;
+  }
 }
 
 @media screen and (max-width: 360px) {
   #search h1 {
-    font-size: 15px;
+    font-size: 30px;
   }
 
   #search input {
     height: 10px;
-    width: 80%;
     margin-bottom: 10px;
   }
 
@@ -53,9 +52,10 @@
   }
 
   #search button {
-    padding: 15px 5px 12px 5px;
+    padding: 9px 16px 8px 12px;
     font-size: 12px;
     font-family: "ProximaNova-Reg";
+
   }
 
   #search input {
