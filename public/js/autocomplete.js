@@ -2,6 +2,7 @@ function bootAutoComplete() {
   $('#search input').autocomplete({
     minChars: 3,
     serviceUrl: '/api/search',
+    zIndex: '-1',
     transformResult: function(response) {
       return {
         suggestions: $.map(JSON.parse(response).suggestions, function(suggestion) {
