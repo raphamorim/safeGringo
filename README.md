@@ -2,6 +2,20 @@
 
 Hackpuc 2015 project
 
+1 - Initalize MongoDB:
+
 ```shell
-npm install && npm start
+mongod
+```
+
+2 - Install all depencies
+
+```shell
+npm install
+```
+
+3 - Star App
+
+```shell
+npm start
 ```
