@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'),
     stopwords = require('../data/stopwords.json'),
     ArrayUtils = require('./arrayUtils'),
+    fuiRoubado = require('../models/fuiRoubadoDataMining'),
     Schema = mongoose.Schema;
 
 var placeSchema = new Schema({
@@ -10,29 +11,23 @@ var placeSchema = new Schema({
     facts: [{type: String}],
     tags: [{type: String, unique: true, required: true}],
     searchTerms: [{type: String, index: true}],
+    stealingOcurrencesTerm: {type: String},
+    stealingOcurrences: {
+      total: {type: Number},
+      dangerHours: [{
+        hourRange: {start: {type: Number}, end: {type: Number}},
+        ocurrences: {type: Number},
+        percent: {type: Number}
+      }]
+    }
 },
 {
     versionKey: false
 });
 
-placeSchema.methods.saveWithSearchTerms = function(cb) {
-  var allTerms = (this.names || [])
-    .concat(this.tags || []);
-
-  var terms = []
-  for(var i in allTerms) {
-    terms = terms.concat(allTerms[i].split(/ +/));
-  }
-
-  var selectedTerms = [];
-  for(var i in terms) {
-    var term = terms[i].trim().toLowerCase();
-    if(!stopwords[term]) {
-      selectedTerms.push(term);
-    }
-  }
-  
-  this.searchTerms = ArrayUtils.uniq(selectedTerms);
+placeSchema.methods.saveWithTerms = function(cb) {
+  this.searchTerms = searchTermsFor(this);
+  this.stealingOcurrences = fuiRoubado.extractData(this.stealingOcurrencesTerm);
   this.save(cb);
 };
 
@@ -81,6 +76,26 @@ placeSchema.statics.search = function(termsStr, cb) {
     });
   }
 };
+
+function searchTermsFor(self) {
+  var allTerms = (self.names || [])
+    .concat(self.tags || []);
+
+  var terms = []
+  for(var i in allTerms) {
+    terms = terms.concat(allTerms[i].split(/ +/));
+  }
+
+  var selectedTerms = [];
+  for(var i in terms) {
+    var term = terms[i].trim().toLowerCase();
+    if(!stopwords[term]) {
+      selectedTerms.push(term);
+    }
+  }
+  
+  return ArrayUtils.uniq(selectedTerms);
+}
 
 var Place = mongoose.model('Place', placeSchema);
 

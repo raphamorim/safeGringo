@@ -49,9 +49,10 @@ function hourRangesBiggerPercents(total, hours) {
 function makeDataResume(ocurrences, percents, total) {
   return {
     total: total,
-    ocurrences: Object.keys(percents).map(function(hour) {
+    dangerHours: Object.keys(percents).map(function(hour) {
       return {
-        quantity: ocurrences[hour],
+        hourRange: {start: parseInt(hour, 10), end: (parseInt(hour,10)+3)%24},
+        ocurrences: ocurrences[hour],
         percent: percents[hour]
       };
     })
