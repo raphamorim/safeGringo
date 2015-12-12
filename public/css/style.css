@@ -146,12 +146,47 @@ header {
     position: relative;
     margin: 0px auto;
     width: 820px;
-    padding: 10px;
+    padding: 100px;
 }
 
 .card {
-    height: 240px;
-    background: #000;
+    height: 340px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+  font-family: Helvetica;
 }
 
+.card .card-category {
+    width: 40%;
+}
+
+.card .card-image {
+    width: 50%;
+}
+
+.card .card-image img {
+    height: 340px;
+    max-width: 100%;
+}
+
+.card .card-category h2 {
+  line-height: 1.3em;
+}
+
+.card .card-category span {
+  color: #B9B9B9;
+  text-transform: uppercase;
+  border-bottom: 4px solid #FFD920;
+  padding: 0 10px 5px 10px;
+  width: auto;
+  font-size: 18px;
+}
+
+.card .card-category h2 {
+  margin: 25px 0;
+  font-size: 35px;
+  color: #2D2D2D;
+  text-transform: uppercase;
+  font-weight: bold;
+}
