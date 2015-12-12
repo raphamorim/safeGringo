@@ -2,7 +2,7 @@ var Place      = require('../models/place'),
     searchView = require('../views/api/search');
 
 exports.search = function(req, res) {
-  var query = req.query.q;
+  var query = req.query.query;
   Place.search(query, function(err, places) {
     if(err) {
       res.statusCode = 500;
