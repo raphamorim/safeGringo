@@ -57,7 +57,7 @@ placeSchema.statics.search = function(termsStr, cb) {
         var place = places[j];
         var name = place.names[0];
         if(results[name]) {
-          results[name]["founds"]++;
+          results[name].founds++;
         } else {
           results[name] = {
             found: 1,
@@ -71,11 +71,11 @@ placeSchema.statics.search = function(termsStr, cb) {
         for(var k in results) {
           resultsArray.push(results[k]);
         }
-        resultsArray = resultsArray.sort(function(result) {
-          return result["founds"];
-        }).reverse();
+        resultsArray = resultsArray.sort(function(r1, r2) {
+          return r1.founds < r2.founds;
+        });
         cb(false, resultsArray.map(function(result) {
-          return result["place"];
+          return result.place;
         }));
       }
     });
