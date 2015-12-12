@@ -152,9 +152,10 @@ header {
 .card {
     height: 340px;
     width: 100%;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-  font-family: Helvetica;
+    font-family: Helvetica;
 }
 
 .card .card-category {
