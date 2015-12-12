@@ -1,0 +1,27 @@
+{
+  "name": "safe-gringo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphamorim/safeGringo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raphamorim/safeGringo/issues"
+  },
+  "homepage": "https://github.com/raphamorim/safeGringo#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "kenobi": "^0.2.1",
+    "multer": "^1.1.0"
+  }
+}
