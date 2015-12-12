@@ -38,7 +38,7 @@ placeSchema.methods.saveWithSearchTerms = function(cb) {
 
 placeSchema.statics.like = function(name, cb) {
   var query = {
-    "searchTerms": new RegExp("(^|.*[-_ ])" + name + "([-_ ].*|$)", "i")
+    "searchTerms": new RegExp(".*" + name + ".*", "i")
   };
 
   Place.find(query, function(err, places) {
