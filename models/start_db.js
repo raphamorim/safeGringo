@@ -20,7 +20,7 @@ var places = [
   }),
   new Place({
     type: "Beach",
-    names: ["Copacabana Beach"],
+    names: ["Copacabana Beach", "Beach of copacabana"],
     photos: ["http://goo.gl/XXm64B"],
     facts: ["Don't ever go."],
     tags: ["Beach", "Copacabana"]
@@ -35,7 +35,7 @@ var places = [
 ];
 
 for(var i in places) {
-  places[i].save(function(err) {
+  places[i].saveWithSearchTerms(function(err) {
     if(err) {
       console.log(err);
       return;
