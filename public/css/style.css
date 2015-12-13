@@ -246,13 +246,17 @@ header {
   margin: 8px 0 25px;
 }
 
-.card .card-category p {
+.card .card-category .description {
   font-family: "ProximaNova-Light";
   color: #666;
   font-size: 18px;
   line-height: 1.2em;
   padding-bottom: 20px;
   border-bottom: solid 1px #A5A5A5;
+}
+
+.card .card-category li {
+  margin: 10px 0;
 }
 
 .card-analytics h3 {

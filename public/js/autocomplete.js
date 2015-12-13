@@ -38,7 +38,7 @@ function suggestionMarkup(suggestion) {
                       '<div class="card-category">' +
                       '<h2>' + suggestion.name.portuguese + '</h2>' +
                       '<span>' + suggestion.name.english + '</span>' +
-                      '<p class="description"></p>' +
+                      '<div class="description">' + _facts(suggestion.facts) + '</div>' +
                       '</div>' +
                       '<div class="card-analytics">' +
                         _cardAnalytics(suggestion.stealingOcurrences, suggestion.stealingOcurrences.dangerHours) +
@@ -49,12 +49,21 @@ function suggestionMarkup(suggestion) {
   return cardContainer;
 }
 
+function _facts(suggestionFacts) {
+  var items = '';
+
+  $.map(suggestionFacts, function(suggestionFact) {
+    items += '<li>' + suggestionFact + '</li>';
+  });
+
+  return '<ul>' + items + '</ul>';
+}
+
 function _cardAnalytics(stealingOcurrences, dangerHours) {
   var analytics = '<h3>Muggings near this local</h3>' +
                   '<p>' + stealingOcurrences.total + ' muggings, in the last 2 years *</p>' + _ul(dangerHours);
 
   return analytics;
-
 }
 
 function _ul(dangerHours) {
