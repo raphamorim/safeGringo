@@ -11,7 +11,7 @@ var placeSchema = new Schema({
     facts: [{type: String}],
     tags: [{type: String, unique: true, required: true}],
     searchTerms: [{type: String, index: true}],
-    stealingOcurrencesTerm: {type: String},
+    stealingOcurrencesTerm: [{type: String}],
     stealingOcurrences: {
       total: {type: Number},
       dangerHours: [{
@@ -27,7 +27,7 @@ var placeSchema = new Schema({
 
 placeSchema.methods.saveWithTerms = function(cb) {
   this.searchTerms = searchTermsFor(this);
-  this.stealingOcurrences = fuiRoubado.extractData(this.stealingOcurrencesTerm);
+  this.stealingOcurrences = fuiRoubado.extractData(this.stealingOcurrencesTerm[0]);
   this.save(cb);
 };
 
