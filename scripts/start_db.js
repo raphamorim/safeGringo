@@ -4,13 +4,19 @@ var Place = require('../models/place'),
 require('mongoose').connect(env.config.mongo);
 Place.find({}).remove().exec();
 
+var BEACH_FACTS = [
+  "Do not let your belongs alone on the sand."
+];
+
 var places = [
   new Place({
     type: "Beach",
     names: ["Praia de Copacabana", "Copacabana Beach", "Beach of Copacabana"],
     photos: ["https://upload.wikimedia.org/wikipedia/commons/a/a3/Rio_de_janeiro_copacabana_beach_2010.JPG"],
-    facts: ["Don't ever go."],
-    tags: ["Beach", "Copacabana"],
+    facts: [
+      "Avoid bringing valuable belongings on crownded days like weekends, because criminals usually roam around."
+    ].concat(BEACH_FACTS),
+    tags: ["Beach", "Copacabana", "Praia"],
     stealingOcurrencesTerm: ["Copacabana", "Copacabana Beach"]
   }),
 
@@ -18,7 +24,7 @@ var places = [
     type: "Turistic Point",
     names: ["Corcovado", "Christ the Redeemer", "Cristo Redentor"],
     photos: ["https://upload.wikimedia.org/wikipedia/commons/9/97/Cristo_Redentor_-_Rio_de_Janeiro,_Brasil-crop.jpg"],
-    facts: ["Safe, no worries."],
+    facts: ["The hiking trails usually have thefts."],
     tags: ["Trolley", "tram", "cable car"],
     stealingOcurrencesTerm: ["Corcovado", "Christ the Redeemer"]
   }),
@@ -27,8 +33,11 @@ var places = [
     type: "Turistic Point",
     names: ["Lapa", "Lapa"],
     photos: ["http://goo.gl/XXm64B"],
-    facts: [],
-    tags: [],
+    facts: [
+      "It is highly frequented by criminals so avoid being alone and carrying valuable belongings.",
+      "Avoid deserted streets like Rua do Passeio, try to stay close to the Arches that usually are busy."
+    ],
+    tags: ["Arcos", "Arches", "Centro", "Downtown"],
     stealingOcurrencesTerm: ["Lapa", "Lapa"]
   }),
 
@@ -36,8 +45,10 @@ var places = [
     type: "Turistic Point",
     names: ["Ipanema", "Ipanema"],
     photos: ["https://upload.wikimedia.org/wikipedia/commons/a/af/1_ipanema_beach_vidigal_sunset.jpg"],
-    facts: [],
-    tags: [],
+    facts: [
+      "Avoid bringing valuable belongings on crownded days like weekends, because criminals usually roam around."
+    ].concat(BEACH_FACTS),
+    tags: ["Beach", "Praia"],
     stealingOcurrencesTerm: ["Ipanema", "Ipanema"]
   }),
 
@@ -45,8 +56,8 @@ var places = [
     type: "Turistic Point",
     names: ["Pão de Açúcar", "Sugar Mountain", "Sugarloaf Cable Car"],
     photos: ["https://upload.wikimedia.org/wikipedia/commons/4/4c/Enseada_de_Botafogo_e_P%C3%A3o_de_A%C3%A7%C3%BAcar.jpg"],
-    facts: [],
-    tags: [],
+    facts: ["One of safest places in Rio."],
+    tags: ["Urca"],
     stealingOcurrencesTerm: ["Pão de açúcar", "Sugarloaf Cable Car"]
   }),
 
@@ -54,7 +65,8 @@ var places = [
     type: "Turistic Point",
     names: ["Santa Teresa", "Saint Teresa Convent"],
     photos: ["http://annabelleinriodejaneiro.com/wp-content/uploads/2012/12/Santa-Teresa.jpg"],
-    facts: [],
+    facts: [
+    ],
     tags: [],
     stealingOcurrencesTerm: ["Santa Teresa", "Saint Teresa"]
   }),
@@ -63,8 +75,10 @@ var places = [
     type: "Turistic Point",
     names: ["Maracanã", "Maracanã Stadium"],
     photos: ["https://upload.wikimedia.org/wikipedia/commons/d/d4/Maracan%C3%A3_2014_e.jpg"],
-    facts: [],
-    tags: [],
+    facts: [
+      "Avoid walk too far away from the Stadium because it has less police units."
+    ],
+    tags: ["Tijuca", "Estádio"],
     stealingOcurrencesTerm: ["Maracanã", "Maracanã Stadium"]
   }),
 
