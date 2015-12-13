@@ -11,6 +11,7 @@ function bootAutoComplete() {
       };
     },
     onSearchComplete: function(query, suggestions) {
+      document.body.classList.remove("no-search")
       $('.card-list .card').remove();
 
       var cards = $.map(suggestions, function(suggestion) {
