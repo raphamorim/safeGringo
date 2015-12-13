@@ -6,7 +6,7 @@ function bootAutoComplete() {
     transformResult: function(response) {
       return {
         suggestions: $.map(JSON.parse(response).suggestions, function(suggestion) {
-          return { value: suggestion.name, data: suggestion.type, photo: suggestion.photos[0]}
+          return { value: suggestion.name.portuguese, data: suggestion.name.portuguese, rawSuggestion: suggestion }
         })
       };
     },
@@ -14,7 +14,7 @@ function bootAutoComplete() {
       $('.card-list .card').remove();
 
       var cards = $.map(suggestions, function(suggestion) {
-        return suggestionMarkup(suggestion.value, suggestion.data, suggestion.photo);
+        return suggestionMarkup(suggestion.rawSuggestion);
       });
 
       $('.card-list').append(cards);
@@ -22,17 +22,50 @@ function bootAutoComplete() {
   });
 }
 
-function suggestionMarkup(suggestionName, suggestionPoint, suggestionImageUrl) {
+function suggestionMarkup(suggestion) {
   var cardContainer = '<div class="card">' +
-                      '<div class="card-category">' +
-                      '<span>' + suggestionPoint + '</span>' +
-                      '<h2>' + suggestionName + '</h2>' +
-                      '</div>' +
                       '<div class="card-image">' +
-                      '<img src="' + suggestionImageUrl + '" alt="suggestionName">'
-                      '</div></div>';
+                      '<img src="' + suggestion.photos[0] + '" alt="' + suggestion.name.portuguese + '">' +
+                      '</div>' +
+                      '<div class="card-info">' +
+                      '<div class="card-category">' +
+                      '<h2>' + suggestion.name.portuguese + '</h2>' +
+                      '<span>' + suggestion.name.english + '</span>' +
+                      '<p class="description"></p>' +
+                      '</div>' +
+                      '<div class="card-analytics">' +
+                        _cardAnalytics(suggestion.stealingOcurrences, suggestion.stealingOcurrences.dangerHours) +
+                      '</div>' +
+                      '</div>' +
+                      '</div>';
 
   return cardContainer;
+}
+
+function _cardAnalytics(stealingOcurrences, dangerHours) {
+  var analytics = '<h3>Assaltos por perto</h3>' +
+                  '<p>' + stealingOcurrences.total + ' assaltos, nos últimos 2 anos *</p>' + _ul(dangerHours);
+
+  return analytics;
+
+}
+
+function _ul(dangerHours) {
+  var items = '';
+    $.map(dangerHours, function(dangerHour) {
+      items += '<li>' +
+               '<div class="c100 p' + dangerHour.percent + ' small">' +
+               '<span>' + dangerHour.percent + '</span>' +
+               '<div class="slice">' +
+               '<div class="bar"></div>' +
+               '<div class="fill"></div>' +
+               '</div>' +
+               '</div>' +
+               '<p>' + dangerHour.prettyName + '</p>' +
+               '</li>';
+  });
+
+  return '<ul class="seasons">' + items + '</ul>';
 }
 
 $(function() {
