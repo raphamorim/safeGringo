@@ -38,7 +38,7 @@ footer {
 }
 
 footer .cover {
-	padding: 50px;
+	padding: 65px;
   background: url(../images/stairs-footer.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -77,6 +77,10 @@ footer .cover {
 	margin-top: 10px;
   line-height: 20px;
   letter-spacing: 0.5px;
+}
+
+.phones li {
+  display: inline-block;
 }
 
 /* -- Basic Patterns -- */
