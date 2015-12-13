@@ -43,6 +43,7 @@ placeSchema.statics.like = function(name, cb) {
 
 placeSchema.statics.search = function(termsStr, cb) {
   var terms = termsStr.trim().split(/ +/);
+  terms = terms.filter(function(term){return !stopwords[term];});
   var results = {};
   for(var i in terms) {
     var term = terms[i];
@@ -81,7 +82,7 @@ function searchTermsFor(self) {
   var allTerms = (self.names || [])
     .concat(self.tags || []);
 
-  var terms = []
+  var terms = [];
   for(var i in allTerms) {
     terms = terms.concat(allTerms[i].split(/ +/));
   }
