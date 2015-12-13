@@ -36,7 +36,7 @@ Config.development = {
  */
 Config.production = {
     name: "production",
-    mongo: "",
+    mongo: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL,
     defaultUrl: "",
     serverPort: 80,
     logNamespace: "production",
