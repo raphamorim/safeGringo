@@ -43,8 +43,8 @@ function suggestionMarkup(suggestion) {
 }
 
 function _cardAnalytics(stealingOcurrences, dangerHours) {
-  var analytics = '<h3>Assaltos por perto</h3>' +
-                  '<p>' + stealingOcurrences.total + ' assaltos, nos últimos 2 anos *</p>' + _ul(dangerHours);
+  var analytics = '<h3>Muggings near this local</h3>' +
+                  '<p>' + stealingOcurrences.total + ' muggings, in the last 2 years *</p>' + _ul(dangerHours);
 
   return analytics;
 
@@ -55,7 +55,7 @@ function _ul(dangerHours) {
     $.map(dangerHours, function(dangerHour) {
       items += '<li>' +
                '<div class="c100 p' + dangerHour.percent + ' small">' +
-               '<span>' + dangerHour.percent + '</span>' +
+               '<span>' + dangerHour.percent + '%</span>' +
                '<div class="slice">' +
                '<div class="bar"></div>' +
                '<div class="fill"></div>' +

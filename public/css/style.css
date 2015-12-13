@@ -42,6 +42,7 @@ footer .cover {
 	display: inline-block;
   font-size: 18px;
 	margin-right: 30px;
+  letter-spacing: 0.5px;
 }
 
 .hackpuc .logo {
@@ -50,19 +51,24 @@ footer .cover {
 }
 
 .phones .label {
-	font-family: "ProximaNova-Bold";
+	font-family: "ProximaNova-Reg";
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 .phones {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 15px 30px;	
+	padding: 15px 30px;
 	border-left: solid #ddd 1px;
 }
 
 .phones .numbers {
+  font-family: "ProximaNova-Light";
   font-size: 16px;
 	margin-top: 10px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
 }
 
 /* -- Basic Patterns -- */
@@ -214,20 +220,23 @@ header {
 }
 
 .card .card-category h2 {
-  font-size: 23px;
+  color: #262626;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
 }
 
 .card .card-category span {
+  font-family: "ProximaNova-Light";
   display: inline-block;
   font-size: 16px;
-  color: #949494;
-  margin: 5px 0 25px;
+  color: #9b9b9b;
+  margin: 8px 0 25px;
 }
 
 .card .card-category p {
-  color: #484747;
+  font-family: "ProximaNova-Light";
+  color: #666;
   font-size: 18px;
   line-height: 1.2em;
   padding-bottom: 20px;
@@ -235,13 +244,14 @@ header {
 }
 
 .card-analytics h3 {
-  font-size: 20px;
-  margin-top: 20px;
-  font-weight: bold;
+  font-size: 22px;
+  margin-top: 25px;
+  font-family: "ProximaNova-Bold";
 }
 
 .card-analytics p {
-  color: #484747;
+  font-family: "ProximaNova-Light";
+  color: #666;
   margin: 10px 0 30px;
 }
 
