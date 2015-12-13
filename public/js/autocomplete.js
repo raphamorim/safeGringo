@@ -1,8 +1,8 @@
 function bootAutoComplete() {
   $('#search input').autocomplete({
-    minChars: 3,
     serviceUrl: '/api/search',
     zIndex: '-1',
+    deferRequestBy: 500,
     transformResult: function(response) {
       return {
         suggestions: $.map(JSON.parse(response).suggestions, function(suggestion) {
@@ -11,8 +11,14 @@ function bootAutoComplete() {
       };
     },
     onSearchComplete: function(query, suggestions) {
-      document.body.classList.remove("no-search")
       $('.card-list .card').remove();
+      if(suggestions.length === 0) {
+        window.scrollTo(0,0);
+        document.body.classList.add("no-search");
+      } else {
+        window.scrollTo(0,0);
+        document.body.classList.remove("no-search");
+      }
 
       var cards = $.map(suggestions, function(suggestion) {
         return suggestionMarkup(suggestion.rawSuggestion);
