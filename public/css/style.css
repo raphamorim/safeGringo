@@ -21,6 +21,50 @@
   font-style: normal;
 }
 
+/* -- Footer -- */
+footer {
+  width: 100%;
+  margin: 0 auto;
+	color: white;
+  font-family: "ProximaNova-Reg";
+}
+
+footer .cover {
+	padding: 50px;
+  background: url(../images/stairs-footer.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hackpuc {
+	display: inline-block;
+  font-size: 18px;
+	margin-right: 30px;
+}
+
+.hackpuc .logo {
+	vertical-align: middle;
+	width: 52px;
+}
+
+.phones .label {
+	font-family: "ProximaNova-Bold";
+}
+
+.phones {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 15px 30px;	
+	border-left: solid #ddd 1px;
+}
+
+.phones .numbers {
+  font-size: 16px;
+	margin-top: 10px;
+}
+
 /* -- Basic Patterns -- */
 
 a {
@@ -81,11 +125,6 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-#layer-protection {
-  min-height: 500px;
-  background-color: rgba(0,0,0,0.6);
 }
 
 /* -- Search -- */
