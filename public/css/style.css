@@ -141,56 +141,80 @@ header {
 }
 
 #search button:hover {
-    background: #ffd400;
-    color: #FFF;
+  background: #ffd400;
+  color: #FFF;
+}
+
+/* -- Card -- */
+.card {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-family: Helvetica;
 }
 
 .card-list {
-    position: relative;
-    margin: 0px auto;
-    width: 820px;
-    padding: 100px;
-}
-
-.card {
-    height: 340px;
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    font-family: Helvetica;
-}
-
-.card .card-category {
-    width: 40%;
+  position: relative;
+  margin: 0px auto;
+  width: 820px;
+  padding: 100px;
 }
 
 .card .card-image {
-    width: 50%;
+  width: 50%;
 }
 
 .card .card-image img {
-    height: 340px;
-    max-width: 100%;
+  width: 100%;
+}
+
+.card .card-info {
+  width: 50%;
+  padding-left: 25px;
 }
 
 .card .card-category h2 {
-  line-height: 1.3em;
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 .card .card-category span {
-  color: #B9B9B9;
-  text-transform: uppercase;
-  border-bottom: 4px solid #FFD920;
-  padding: 0 10px 5px 10px;
-  width: auto;
-  font-size: 18px;
+  display: inline-block;
+  font-size: 16px;
+  color: #949494;
+  margin: 5px 0 25px;
 }
 
-.card .card-category h2 {
-  margin: 25px 0;
-  font-size: 35px;
-  color: #2D2D2D;
-  text-transform: uppercase;
+.card .card-category p {
+  color: #484747;
+  font-size: 18px;
+  line-height: 1.2em;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #A5A5A5;
+}
+
+.card-analytics h3 {
+  font-size: 20px;
+  margin-top: 20px;
   font-weight: bold;
+}
+
+.card-analytics p {
+  color: #484747;
+  margin: 10px 0 30px;
+}
+
+.card-analytics .seasons li {
+  display: inline-block;
+  text-align: center;
+  margin: 0 7px;
+}
+
+.card-analytics .seasons .c100 {
+  margin: 0 0 15px;
+}
+.card-analytics .seasons p {
+  font-size: 15px;
 }
