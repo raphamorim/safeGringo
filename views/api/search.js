@@ -30,7 +30,7 @@ function toStealingOcurrencesJSON(ocurrencesData, terms) {
       var end = dangerHour.hourRange.end;
       dangerHourJSON.prettyRange = util.format("%sh to %sh", start, end);
       dangerHourJSON.prettyName = PRETTY_NAMES[start];
-      dangerHourJSON.percent = Math.round(dangerHour.percent * 10) / 10;
+      dangerHourJSON.percent = Math.round(dangerHour.percent);
       return dangerHourJSON;
     })
   };
